@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border_rect"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            >
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/deliverypackage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/deliverypackage"
+                    android:layout_gravity="center"
+                    />
+
+                <customfonts.MyTextView
+                    android:id="@+id/orderpalced"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order placed"
+                    android:textColor="@color/textSub"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+                    />
+
+                <customfonts.MyTextView
+                    android:id="@+id/orderday"
+                    android:layout_weight="0.7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2 day ago"
+                    android:textColor="@color/textSub"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+                    />
+
+                <ImageView
+                    android:id="@+id/more"
+                    android:visibility="gone"
+                    android:layout_width="15dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/more"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp">
+
+
+                <customfonts.MyTextView
+                    android:id="@+id/orderid"
+                    android:layout_marginLeft="38dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order Id"
+                    android:textColor="@color/textSub"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+
+                    />
+
+                <customfonts.MyTextView
+                    android:id="@+id/idnumber"
+                    android:layout_weight="0.7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="987876543"
+                    android:textColor="@color/textSub"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="6dp"
+                    >
+
+                    <customfonts.MyTextView
+                        android:id="@+id/ordername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vanvera Black High Heels"
+                        android:lines="2"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/Tex"
+                        android:lineSpacingExtra="3dp"
+
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <customfonts.MyTextView
+                            android:id="@+id/qt1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Qt :"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/textSub"
+                            />
+
+
+                        <customfonts.MyTextView
+                            android:id="@+id/qt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1 Pair"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/textSub"
+                            android:layout_marginLeft="6dp"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_weight="2.2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:id="@+id/image"
+                        android:layout_gravity="center"
+                        android:layout_width="190px"
+                        android:src="@drawable/location_pin_destination"
+                        android:layout_height="165px"
+                        android:scaleType="fitXY"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

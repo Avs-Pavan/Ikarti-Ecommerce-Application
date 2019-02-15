@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:background="@drawable/border_rect"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            >
+
+
+            <!--****NAME TEXT****-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <customfonts.MyTextView
+                    android:id="@+id/name1"
+                    android:layout_weight="2.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Full Name"
+                    android:textColor="@color/textSub"
+                    android:textSize="@dimen/textsub"/>
+
+                <customfonts.MyTextView
+                    android:id="@+id/name2"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your first and last name"
+                    android:textColor="@color/textSub"
+                    android:textSize="@dimen/textsub"
+                    />
+            </LinearLayout>
+
+            <!--****Your name TEXT****-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginRight="8dp">
+
+                    <customfonts.MyTextView
+                        android:id="@+id/name3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/light_blue"
+                        android:background="#00000000"
+                        android:maxLines="1"
+                        android:textSize="@dimen/textsub"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colordevider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    >
+
+                    <customfonts.MyTextView
+                        android:id="@+id/name4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/light_blue"
+                        android:background="#00000000"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colordevider" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <!--****ADDRESS 1****-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp">
+
+
+
+                <customfonts.MyTextView
+                    android:id="@+id/addL1"
+                    android:layout_weight="5.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Address Line 1"
+                    android:textColor="@color/textSub"
+                    android:textSize="@dimen/textsub"
+
+
+                    />
+
+
+
+            </LinearLayout>
+
+
+            <!--****ADDRESS LINE 1 FIELD****-->
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+
+                >
+
+                <customfonts.MyTextView
+                    android:id="@+id/addL2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/light_blue"
+                    android:textSize="@dimen/text"
+                    android:background="#00000000"
+                    android:maxLines="4" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider" />
+            </LinearLayout>
+
+
+
+            <!--****CITY AND STATE****-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <customfonts.MyTextView
+                    android:id="@+id/city1"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="City"
+                    android:textColor="@color/textSub"
+                    android:textSize="@dimen/textsub"/>
+
+                <customfonts.MyTextView
+                    android:id="@+id/state1"
+                    android:layout_weight="1.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="State"
+                    android:textColor="@color/textSub"
+                    android:textSize="@dimen/textsub" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginRight="16dp">
+
+                    <customfonts.MyTextView
+                        android:id="@+id/city2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/text"
+                        android:textAllCaps="true"
+
+                        android:background="#00000000"
+                        android:maxLines="1" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colordevider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    >
+
+                    <customfonts.MyTextView
+                        android:id="@+id/state2"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/text"
+                        android:textAllCaps="true"
+
+                        android:background="#00000000"
+                        android:maxLines="1" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colordevider" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--****ZIP CODE AND COUNTRY****-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <customfonts.MyTextView
+                    android:id="@+id/zip"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Zip Code"
+                    android:textColor="@color/textSub"
+                    android:textSize="@dimen/textsub"/>
+
+                <customfonts.MyTextView
+                    android:id="@+id/country"
+                    android:layout_weight="1.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Country"
+                    android:textColor="@color/textSub"
+                    android:textSize="@dimen/textsub" />
+            </LinearLayout>
+
+
+            <!--****CITY AND STATE   TEXT****-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginRight="8dp">
+
+                    <customfonts.MyTextView
+                        android:id="@+id/zip2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/text"
+                        android:background="#00000000"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colordevider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    >
+
+                    <customfonts.MyTextView
+                        android:id="@+id/country2"
+
+                        android:layout_width="173dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/text"
+                        android:textAllCaps="true"
+                        android:background="#00000000"
+                        android:maxLines="1" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colordevider" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+    <!--****Phone number****-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <customfonts.MyTextView
+                android:id="@+id/phno"
+                android:layout_weight="5.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textColor="@color/textSub"
+                android:textSize="@dimen/textsub"
+
+                />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--****phone number fild****-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <customfonts.MyTextView
+                android:id="@+id/phn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_blue"
+                android:textSize="@dimen/text"
+                android:background="#00000000"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="12"
+                />
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colordevider" />
+        </LinearLayout>
+    </LinearLayout>
+        </LinearLayout>
+    <customfonts.MyTextView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:background="@drawable/changebg"
+        android:text="Select This Address"/>
+</LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_margin="10dp"
+            android:id="@+id/deleteAddressBtn"
+            android:src="@drawable/cross"
+            android:layout_alignParentRight="true"
+            android:padding="12dp"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+</LinearLayout>

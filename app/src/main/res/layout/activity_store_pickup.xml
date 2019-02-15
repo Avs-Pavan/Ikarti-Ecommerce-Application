@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+android:background="@color/colordevider"
+    android:layout_height="match_parent"
+    tools:context="com.webinfrasolutions.ikarti.StorePickup">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+    <include layout="@layout/toolbar_orders"
+        android:id="@+id/toolbar"/>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="15dp"
+        card_view:cardUseCompatPadding="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+    <customfonts.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:padding="5dp"
+        android:textSize="16dp"
+        android:id="@+id/distance"
+        android:background="@color/lightGrey"
+        android:textColor="@color/Tex"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+        <customfonts.MyTextView
+            android:id="@+id/myTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:background="@drawable/oneside_rect_blue"
+            android:drawableLeft="@drawable/ic_directions_black_24dp"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_map_black_24dp"
+            android:onClick="navigate"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:clickable="true"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:text="Navigate To Store   "
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="15dp"
+        card_view:cardUseCompatPadding="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+               <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <customfonts.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Store Name "
+                    android:textSize="16dp"
+                    android:textColor="@color/textSub"/>
+                <customfonts.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.6"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="StoreName "
+                    android:textSize="16dp"
+                    android:id="@+id/storename"
+                    android:textColor="@color/Tex"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <customfonts.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Owner Name "
+                    android:textSize="16dp"
+                    android:textColor="@color/textSub"/>
+                <customfonts.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.6"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Owner Name "
+                    android:textSize="16dp"
+                    android:id="@+id/ownername"
+                    android:textColor="@color/Tex"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <customfonts.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Store Address"
+                    android:textSize="16dp"
+                    android:textColor="@color/textSub"/>
+                <customfonts.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.6"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Address "
+                    android:textSize="16dp"
+                    android:id="@+id/address"
+                    android:textColor="@color/Tex"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+   </LinearLayout>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:padding="12dp"
+android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="callStore"
+        android:background="@drawable/grey_ring"
+        android:src="@drawable/ic_local_phone_black_24dp"
+        android:layout_margin="16dp"
+        android:layout_height="60dp" />
+</RelativeLayout>

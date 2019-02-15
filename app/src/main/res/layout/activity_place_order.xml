@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8">
+
+
+<include layout="@layout/placeorder_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@+id/toolbar"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <!--**********Apply coupon and gift wrap
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/rect"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+
+                >
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:padding="9dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/coupontag"
+
+                        />
+
+                    <customfonts.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apply Coupon"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/check"
+                        android:layout_gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colordevider"></View>
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="9dp"
+                    android:layout_gravity="bottom"
+                    >
+
+                    <customfonts.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="150 Rs"
+                        android:textColor="@color/textSub"
+                        android:textSize="11dp"
+                        android:layout_gravity="right"
+                        />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/giftbox"
+
+                        />
+
+                    <customfonts.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Gift Wrap"
+                        android:textColor="@color/red"
+                        android:layout_marginTop="16dp"
+                        android:textSize="@dimen/text"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/check"
+                        android:layout_gravity="right"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+**********-->
+            <LinearLayout
+                android:layout_below="@+id/linear1"
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rect"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                >
+
+                <!--******bag total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/bagtotal"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total"
+                        android:textColor="@color/textSub"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/total"
+                        android:textSize="@dimen/text"
+                        android:drawableLeft="@drawable/rupee_dark"
+                        android:drawablePadding="3dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1600 Rs"
+                        android:textColor="@color/Tex"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider"/>
+
+
+                <!--******bag total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/bagdiscount"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Discount"
+                        android:textColor="@color/textSub"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/discount"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10 %"
+                        android:textColor="@color/Tex"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider"/>
+
+                <!--******sub total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/subtotal"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sub Total"
+                        android:textColor="@color/textSub"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/stotal"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1440 Rs"
+                        android:drawableLeft="@drawable/rupee_dark"
+                        android:drawablePadding="3dp"
+                        android:textColor="@color/Tex"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider"/>
+
+
+                <!--******coupon discount********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/coupondiscount"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Coupon Discount"
+                        android:textColor="@color/red"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/cdiscount"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="- 500 Rs"
+                        android:textColor="@color/red"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider"/>
+
+                <!--******sub total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/delivery"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Shipping"
+                        android:textColor="@color/textSub"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/deliveryfree"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Free"
+                        android:textColor="@color/green"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider"/>
+
+                <!--****** total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/totalpayable"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/totalpayable"
+                        android:textColor="@color/textSub"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="left"
+                        />
+
+
+                    <customfonts.MyTextView
+                        android:layout_weight="1"
+                        android:id="@+id/payable"
+                        android:textSize="@dimen/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/totalpayableamount"
+                        android:drawableLeft="@drawable/rupee_dark"
+                        android:drawablePadding="3dp"
+                        android:textColor="@color/Tex"
+                        android:background="#0000"
+                        android:padding="16dp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider"/>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    >
+                    <customfonts.MyTextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Number Of Pieces"
+                        android:textColor="@color/textSub"
+                        android:layout_marginRight="35dp"
+                        android:textSize="@dimen/text"
+                        android:layout_marginLeft="13dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add_circle_outline_black_24dp"
+                        android:layout_marginLeft="1dp"
+                        android:padding="2dp"
+                        />
+
+                    <customfonts.MyTextView
+                        android:id="@+id/cartno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:layout_marginTop="3dp"
+                        android:textAlignment="center"
+                        android:text="1"
+                        android:textColorHint="@color/textSub"
+                        android:textColor="@color/light_blue"
+                        android:textSize="20dp"
+
+                        android:layout_marginLeft="20dp"
+                        />
+                    <ImageView
+                        android:id="@+id/minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_remove_circle_outline_black_24dp"
+                        android:layout_marginLeft="16dp"
+                        android:padding="2dp"
+                        /></LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/linear2"
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+
+                android:layout_alignParentBottom="true"
+                >
+
+                <customfonts.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeorder"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/text"
+                    android:background="@drawable/oneside_roundrect"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="10dp"
+                    android:onClick="placeOrder"
+                    android:paddingBottom="10dp"
+                    android:clickable="true"
+
+                    android:paddingRight="25dp"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    />
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>

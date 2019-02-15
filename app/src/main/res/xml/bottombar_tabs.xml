@@ -1,0 +1,39 @@
+<tabs>
+    <tab
+        id="@+id/tab_demo"
+        inActiveColor="#ced1ce"
+        icon="@drawable/ic_home_black_24dp"
+        activeColor="@color/light_green"
+        />
+    <tab
+        id="@+id/tab_cart"
+        inActiveColor="#ced1ce"
+        activeColor="@color/light_green"
+
+        icon="@drawable/ic_shopping_cart_white_24dp"
+
+        />
+    <tab
+        id="@+id/tab_fav"
+        inActiveColor="#ced1ce"
+        activeColor="@color/light_green"
+
+        icon="@drawable/ic_favorite_black_24dp"
+
+        />
+
+
+  <tab
+        id="@+id/tab_notifications"
+        inActiveColor="#ced1ce"
+        activeColor="@color/light_green"
+        icon="@drawable/orders"
+        />
+    <tab
+        id="@+id/tab_cat"
+        inActiveColor="#ced1ce"
+        icon="@drawable/ic_apps_black_24dp"
+        activeColor="@color/light_green"
+        />
+
+</tabs>

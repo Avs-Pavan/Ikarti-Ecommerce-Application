@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/rect"
+    android:layout_height="wrap_content"
+android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_width="50dp"
+        android:src="@drawable/food"
+        android:layout_marginRight="20dp"
+    android:id="@+id/image"
+android:layout_marginLeft="10dp"
+        android:layout_height="50dp" />
+    <customfonts.MyTextView
+        android:id="@+id/expand_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:padding="16dp" />
+
+</LinearLayout>
+
+
+    <com.webinfrasolutions.ikarti.ExpandableLayout
+        android:id="@+id/expandable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colordevider"
+        app:el_duration="300"
+        app:el_expanded="false">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:paddingTop="5dp"
+           android:paddingBottom="2dp"
+           android:id="@+id/edit"
+
+           android:layout_height="55dp">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_alignParentLeft="true"
+               android:orientation="vertical"
+               android:layout_centerVertical="true"
+android:layout_weight="1"
+               android:layout_height="match_parent">
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:padding="3dp"
+                   android:id="@+id/edit_img"
+                   android:src="@drawable/pencil144"
+                   android:layout_height="30dp" />
+               <customfonts.MyTextView
+                   android:layout_width="match_parent"
+                   android:textSize="12dp"
+                   android:gravity="center"
+android:layout_marginTop="3dp"
+                   android:layout_height="match_parent"
+                   android:textColor="@color/light_green"
+                   android:text="Edit   "/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_centerInParent="true"
+               android:orientation="vertical"
+android:layout_weight="1"
+               android:id="@+id/delete"
+
+               android:gravity="center"
+               android:layout_height="match_parent">
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:src="@drawable/trash144"
+                   android:layout_height="30dp" />
+               <customfonts.MyTextView
+                   android:layout_width="match_parent"
+                   android:textSize="12dp"
+                   android:gravity="center"
+                   android:layout_marginTop="3dp"
+
+                   android:layout_height="match_parent"
+                   android:textColor="@color/light_green"
+                   android:text="Delete  "/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_alignParentRight="true"
+               android:orientation="vertical"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:visibility="invisible"
+               android:id="@+id/preview"
+
+               android:layout_centerVertical="true"
+               android:layout_height="match_parent">
+
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:src="@drawable/preview"
+                   android:layout_height="30dp" />
+               <customfonts.MyTextView
+                   android:layout_width="match_parent"
+                   android:textSize="12dp"
+                   android:gravity="center"
+                   android:layout_marginTop="3dp"
+
+                   android:layout_height="match_parent"
+                   android:textColor="@color/light_green"
+                   android:text="Preview"/>
+           </LinearLayout>
+
+
+       </LinearLayout>
+    </com.webinfrasolutions.ikarti.ExpandableLayout>
+</LinearLayout>

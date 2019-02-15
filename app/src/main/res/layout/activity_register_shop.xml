@@ -1,0 +1,313 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_height="170dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_imview"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_height="150dp"
+            android:src="@drawable/profile"
+            app:civ_border_width="0.5dp"
+            android:layout_centerInParent="true"
+            app:civ_fill_color="@color/light_green"
+            app:civ_border_color="@color/light_green"/>
+
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_alignEnd="@id/profile_imview"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:padding="8dp"
+            android:background="@drawable/ring_green_filled"
+            android:src="@drawable/ic_camera_alt_black_24dp"
+            android:id="@+id/bmb_img"
+            android:layout_gravity="center"
+            android:layout_alignRight="@id/profile_imview" />
+    </RelativeLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/shopNameLay"
+        android:layout_margin="10dp"
+        android:textColorHint="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <customfonts.MyEditText
+            android:id="@+id/shopNameEt"
+            android:maxLines="2"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/ic_business_black_24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Shop Name"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_margin="10dp"
+        android:id="@+id/ownerNameLay"
+
+        android:textColorHint="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <customfonts.MyEditText
+            android:id="@+id/ownerNameEt"
+            android:drawablePadding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Owner Name"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_margin="10dp"
+        android:id="@+id/primaryContactLay"
+
+        android:textColorHint="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <customfonts.MyEditText
+            android:layout_width="match_parent"
+            android:id="@+id/primaryContactEt"
+            android:drawablePadding="10dp"
+            android:maxLength="10"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:hint="Primary Contact Number "/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_margin="10dp"
+        android:id="@+id/secondaryContactLay"
+
+        android:textColorHint="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <customfonts.MyEditText
+            android:layout_width="match_parent"
+            android:id="@+id/secondaryContactEt"
+            android:inputType="number"
+            android:maxLength="10"
+            android:drawablePadding="10dp"
+            android:layout_height="wrap_content"
+            android:hint="Secondary Contact Number"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_margin="10dp"
+        android:id="@+id/addressLay"
+        android:textColorHint="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <customfonts.MyEditText
+            android:layout_width="match_parent"
+            android:id="@+id/addresssEt"
+            android:maxLines="6"
+            android:drawablePadding="10dp"
+            android:layout_height="wrap_content"
+            android:hint="Address"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/selected_rv"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+    <customfonts.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="22dp"
+        android:id="@+id/cat_tv"
+        android:layout_marginBottom="30dp"
+        android:padding="4dp"
+        android:clickable="true"
+        android:textAlignment="center"
+        android:textColor="@color/light_green"
+        android:background="@drawable/green_border_rect"
+        android:text="Select Category "
+        android:onClick="selectCat"
+        />
+    <customfonts.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="12dp"
+        android:layout_marginBottom="5dp"
+        android:padding="2dp"
+        android:clickable="true"
+        android:textColor="@color/textSub"
+        android:text="Uncheck If Delivery Not Available"
+        android:onClick="selectCat"
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="16dp"
+        android:id="@+id/home_delivery"
+        android:checked="true"
+        android:layout_marginBottom="22dp"
+        android:padding="6dp"
+        android:theme="@style/AppTheme"
+        android:textAlignment="center"
+        android:textColor="@color/light_green"
+        android:background="@drawable/green_border_rect"
+        android:text="@string/cashond"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content">
+        <customfonts.MyTextView
+            android:layout_width="match_parent"
+            android:text="Opening Time"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:onClick="opneTime"
+            android:clickable="true"
+
+            android:id="@+id/open_time_tv"
+            android:background="@drawable/green_border_rect"
+            android:textAlignment="center"
+            android:layout_height="match_parent" />
+        <customfonts.MyTextView
+            android:layout_width="match_parent"
+            android:text="Closing Time"
+            android:layout_weight="1"
+            android:background="@drawable/green_border_rect"
+            android:textSize="20dp"
+            android:id="@+id/close_time_tv"
+android:layout_margin="5dp"
+            android:padding="5dp"
+            android:clickable="true"
+
+            android:onClick="closeTime"
+            android:textAlignment="center"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <customfonts.MyTextView
+            android:layout_width="match_parent"
+            android:text="Lat-Lng :"
+            android:layout_weight="1.3"
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:layout_height="wrap_content" />
+        <customfonts.MyTextView
+            android:layout_width="match_parent"
+            android:id="@+id/lat_tv"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@color/light_green"
+            android:textSize="12dp"
+            android:layout_height="wrap_content" />
+
+        <customfonts.MyTextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/long_tv"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="12dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_marginBottom="10dp"
+    android:layout_height="wrap_content">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        />
+
+
+    <customfonts.MyTextView
+        android:layout_width="match_parent"
+        android:id="@+id/loc_msg"
+        android:textAlignment="center"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/light_blue"
+        android:visibility="gone"
+        android:textSize="14dp"
+        android:layout_below="@id/map"
+        android:text="@string/location_set_message"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+
+
+
+
+    <customfonts.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:textSize="22dp"
+        android:layout_marginBottom="30dp"
+        android:padding="8dp"
+        android:clickable="true"
+
+        android:textAlignment="center"
+        android:textColor="@color/light_green"
+        android:background="@drawable/green_border"
+        android:text="Register Shop "
+        android:onClick="register"
+        />
+
+</LinearLayout>
+
+</ScrollView>
+</LinearLayout>

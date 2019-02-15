@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f2f3f4">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_productdetails"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@+id/div0"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <!--*********product name*********-->
+
+            <LinearLayout
+                android:id="@+id/linear1"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:background="@color/White"
+
+                >
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <customfonts.MyTextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apple iPad Air 2 (Space Grey, 64GB, WiFi + Cellular)"
+                        android:lines="2"
+                        android:textColor="@color/Tex"
+                        android:textSize="16dp"
+                        android:layout_marginLeft="16dp"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="2.6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="right"
+                    >
+                    <customfonts.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4545"
+                        android:drawableLeft="@drawable/rupee_white"
+                        android:id="@+id/price_tv"
+                        android:maxLines="1"
+                        android:textSize="16dp"
+                        android:textColor="@color/White"
+                        android:background="@drawable/oneside_rect_blue"
+                        android:paddingBottom="6dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        />
+
+                    <customfonts.MyTextView
+                        android:id="@+id/cutprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="17,000 Rs"
+                        android:textSize="@dimen/textsub"
+                        android:visibility="gone"
+                        android:textColor="@color/textSub"
+                        android:layout_marginTop="6dp"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="16dp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!--*********image*********-->
+
+            <FrameLayout
+                android:visibility="visible"
+                android:id="@+id/imagge"
+                android:layout_below="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/White">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                    <android.support.v4.view.ViewPager
+                        android:layout_width="match_parent"
+                        android:padding="10dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/pager"
+                        />
+                    <com.viewpagerindicator.CirclePageIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dip"
+                        app:centered="false"
+                        app:fillColor="@color/light_green"
+                        app:pageColor="@color/lightGrey"
+                        app:strokeColor="@color/lightGrey"
+                        app:snap="false" />
+                </RelativeLayout>
+
+            </FrameLayout>
+
+
+
+
+
+            <!--*****review, rate, add to cart  *************-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/imagge"
+                android:background="@drawable/bg_strok"
+                android:id="@+id/linear2"
+                >
+
+
+
+
+                <!--*****review, rate*************-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+android:visibility="gone"
+                    android:background="@color/White"
+                    >
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <RatingBar
+                            android:id="@+id/ratingbar"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="false"
+
+                            />
+                        <customfonts.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(1230)"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/textSub"
+                            android:layout_marginLeft="5dp"
+                            />
+                    </LinearLayout>
+
+
+                    <View
+
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colordevider"
+
+                        ></View>
+
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <customfonts.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reviews"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/light_green"
+                            />
+
+                        <customfonts.MyTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(130)"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/textSub"
+                            android:layout_marginLeft="5dp"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colordevider"
+                        ></View>
+
+                    <LinearLayout
+
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+
+                        <customfonts.MyTextView
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="In Stock"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/red"
+
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!--********add to cart**********-->
+
+
+                <LinearLayout
+                    android:id="@+id/linear3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/White"
+                    >
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        >
+                        <customfonts.MyTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add to Cart"
+                            android:textColor="@color/textSub"
+                            android:textSize="@dimen/textsub"
+                            />
+
+                        <ImageView
+                            android:id="@+id/plus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/plus"
+                            android:layout_marginLeft="16dp"
+                            android:padding="2dp"
+                            />
+
+                        <customfonts.MyTextView
+                            android:id="@+id/cartno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="0"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:textColorHint="@color/textSub"
+                            android:background="#00000000"
+                            android:textColor="@color/textSub"
+                            android:textSize="@dimen/textsub"
+                            android:layout_marginLeft="16dp"
+                            />
+                        <ImageView
+                            android:id="@+id/minus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/minus"
+                            android:layout_marginLeft="16dp"
+                            android:padding="2dp"
+                            /></LinearLayout>
+                    <View
+
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colordevider"
+                        android:layout_marginLeft="16dp"
+                        ></View>
+
+
+
+                    <customfonts.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Verified by IkartI"
+                        android:textSize="@dimen/textsub"
+                        android:textColor="@color/light_green"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginLeft="22dp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/linear4"
+                android:layout_below="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:padding="16dp"
+                android:background="@drawable/bg_strok"
+                android:layout_marginTop="16dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/guard"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="0.07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <customfonts.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Zeno Guarantee"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/Tex"
+                        />
+
+                    <customfonts.MyTextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="100% Payment Protection. 7days easy return in case item is defective or damaged or different from what was described."
+                        android:textSize="@dimen/textsub"
+                        android:textColor="@color/textSub"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+            <!--************Location**************-->
+
+
+
+         <!--   <LinearLayout
+                android:id="@+id/linear5"
+                android:layout_below="@+id/linear4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@drawable/bg_strok"
+                android:layout_marginTop="16dp"
+                >
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/locationpin"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="0.07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+                    <customfonts.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Specify pincode to find delivery at your location"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/Tex"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="16dp"
+                        >
+                        <customfonts.MyTextView
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pincode :"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/textSub"
+                            />
+                        <customfonts.MyTextView
+                            android:layout_weight="1"
+                            android:id="@+id/changeno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/code"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/textSub"
+                            android:layout_marginLeft="6dp"
+
+                            />
+
+
+                        <customfonts.MyTextView
+                            android:layout_weight="1"
+                            android:id="@+id/change"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Change"
+                            android:textSize="@dimen/textsub"
+                            android:background="@drawable/changebg"
+                            android:textColor="@color/White"
+                            android:paddingBottom="4dp"
+                            android:paddingTop="4dp"
+                            android:paddingLeft="7dp"
+                            android:paddingRight="7dp"
+                            android:layout_marginLeft="16dp"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+
+                    <customfonts.MyTextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Item is available on this pincode"
+                        android:drawablePadding="6dp"
+                        android:drawableLeft="@drawable/checked"
+                        android:textSize="@dimen/textsub"
+                        android:textColor="@color/textSub"
+                        android:layout_marginTop="16dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp"
+                        >
+
+
+                        <customfonts.MyTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delivered in 2 -4 days"
+                            android:drawablePadding="6dp"
+                            android:drawableLeft="@drawable/checked"
+                            android:textSize="@dimen/textsub"
+                            android:textColor="@color/textSub"
+                            />
+
+                        <customfonts.MyTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+ 30 Rs"
+                            android:textSize="@dimen/textsub"
+                            android:layout_marginLeft="6dp"
+                            android:textColor="@color/red"
+                            />
+                    </LinearLayout>
+
+                    <customfonts.MyTextView
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cash On Delivery available"
+                        android:drawablePadding="6dp"
+                        android:drawableLeft="@drawable/checked"
+                        android:textSize="@dimen/textsub"
+                        android:textColor="@color/textSub"
+                        />
+
+
+                </LinearLayout>
+            </LinearLayout>-->
+
+
+
+            <!--************Item details**************-->
+
+
+            <LinearLayout
+                android:id="@+id/linear6"
+                android:layout_below="@+id/linear4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@drawable/bg_strok"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false">
+
+
+
+
+                <LinearLayout
+                    android:layout_weight="0.07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+                    <customfonts.MyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Item Details"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/Tex"
+                        />
+
+
+
+                    <customfonts.MyTextView
+
+                        android:id="@+id/des"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- 3GB DDR3 RAM + 16 GB ROM"
+                        android:drawablePadding="6dp"
+                        android:textSize="@dimen/textsub"
+                        android:textColor="@color/textSub"
+                        android:layout_marginTop="16dp"
+                        />
+
+
+
+
+                    <LinearLayout
+                        android:layout_below="@+id/linear3"
+                        android:id="@+id/save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="0dp"
+
+                        >
+<!--
+                        <customfonts.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View More"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/textsub"
+                            android:background="@drawable/view_more_bg"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:paddingRight="15dp"
+                            android:gravity="center"
+                            android:layout_gravity="right"
+                            />
+-->
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+            <!--********RECYCLERVIEW ************-->
+
+            <android.support.v7.widget.RecyclerView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rv2"
+                android:background="@color/colordevider"
+                android:paddingBottom="30dp"
+                android:layout_below="@+id/linear6"
+
+                android:clipToPadding="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <View
+
+                android:layout_below="@+id/rv2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/strok"
+                android:id="@+id/div9"
+                android:layout_marginTop="36dp"
+
+                />
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+    <View
+
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/strok"
+        android:id="@+id/div0"
+
+
+        />
+    <LinearLayout
+        android:layout_weight="2.6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="right"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        >
+        <customfonts.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD TO CART"
+            android:textSize="16dp"
+            android:onClick="addToCart"
+            android:gravity="center"
+            android:id="@+id/addtocart"
+            android:textColor="@color/White"
+            android:clickable="true"
+            android:background="@drawable/oneside_rect_green"
+            android:paddingBottom="10dp"
+            android:drawableLeft="@drawable/ic_shopping_cart_white_24dp"
+            android:paddingTop="10dp"
+            android:drawablePadding="15dp"
+            android:paddingRight="14dp"
+            android:paddingLeft="14dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

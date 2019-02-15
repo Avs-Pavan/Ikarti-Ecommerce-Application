@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="7dp"
+    card_view:cardCornerRadius="15dp"
+    card_view:cardUseCompatPadding="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<customfonts.MyEditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:id="@+id/msg"
+    android:layout_margin="10dp"
+    android:textSize="16dp"
+    android:hint="Reason For Declining The Order"    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <customfonts.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Decline  Order"
+            android:layout_weight="1"
+android:gravity="center"
+            android:textSize="@dimen/text"
+            android:id="@+id/button_cancel_order"
+            android:textColor="@color/White"
+            android:background="@drawable/red_btn_gb"
+
+            />
+    </LinearLayout>
+</LinearLayout>
+</android.support.v7.widget.CardView>

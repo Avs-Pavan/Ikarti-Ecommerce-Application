@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/popupbg"
+    android:padding="16dp"
+    >
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical"-->
+    <!--android:gravity="center"-->
+
+    <!--&gt;-->
+
+
+    <customfonts.MyTextView
+
+        android:id="@+id/numberpopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Category List"
+        android:inputType="number"
+        android:textAppearance="?android:attr/textAppearanceSmallPopupMenu"
+        android:textColor="@color/textSub"
+        android:background="#00000000"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="125dp"
+        android:layout_marginRight="125dp"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_marginTop="17dp"
+
+        ></View>
+
+
+    <!--</LinearLayout>-->
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="300dp"
+        android:minWidth="200dp"
+        android:id="@+id/cat_select_rv"
+        android:layout_height="300dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <customfonts.MyTextView
+        android:layout_width="90dp"
+        android:layout_height="33dp"
+        android:text="ok"
+        android:textSize="@dimen/text"
+        android:id="@+id/button"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/White"
+        android:background="@drawable/changebg"
+        android:gravity="center"
+
+        />
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colordevider"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.webinfrasolutions.ikarti.Shome">
+
+    <customfonts.MyTextView
+        android:layout_width="match_parent"
+        android:id="@+id/shop_name"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="Shop Name"
+        android:layout_margin="30dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+<ListView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:dividerHeight="10dp"
+    android:divider="@null"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:id="@+id/shop_options_lv"
+    /></LinearLayout>
+</LinearLayout>

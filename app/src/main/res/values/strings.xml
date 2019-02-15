@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Ikarti</string>
+    <string name="code"><u>code</u></string>
+    <string name="maps_api_key">AIzaSyC_dcJ0RgKVH0cAd2BKn0C9YhkTHdESREc</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="base_url">http://ademo.in/</string>
+    <string name="base_url1">http://192.168.43.39/</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="location_set_message">Location has been set automatically.if u think
+        it is wrong please click on the above map to add a new marker.</string>
+    <string name="fab_behvior">com.webinfrasolutions.ikarti.ScrollingFABBehavior</string>
+    <string name="totalpayable"><b>Total Payable</b></string>
+    <string name="totalpayableamount"><b>940 Rs</b></string>
+    <string name="box"><b>Your Order is on the way!</b></string>
+    <string name="description"><i>2.5GHz dual-core Intel Core i5 Tourbo Boost up to 3.1GHz</i></string>
+    <string name="shiping"><i><b>Shipping next week (exited?)</b></i></string>
+    <string name="show_more"><u>Show More</u>.</string>
+    <string name="cashond">Home &amp; Cash On Delivery Availability </string>
+    <string name="placeorder"><b>PLACE ORDER</b></string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="notificationtitle">Android Notification Tutorial</string>
+    <string name="notificationtext">Notification Text</string>
+    <string name="notificationticker">Notification Ticker</string>
+    <string name="customnotificationtitle">Android Notification Tutorial</string>
+    <string name="customnotificationtext">Custom Notification Text</string>
+    <string name="customnotificationticker">Custom Notification Ticker</string>
+    <string name="lbltitle">"Title : "</string>
+    <string name="lbltext">"Text : "</string>
+    <string name="notification">Notification</string>
+    <string name="customnotification">Custom Notification</string>
+
+</resources>

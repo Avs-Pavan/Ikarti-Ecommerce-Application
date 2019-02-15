@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "368417438784",
+    "firebase_url": "https://ikarti-1512236779332.firebaseio.com",
+    "project_id": "ikarti-1512236779332",
+    "storage_bucket": "ikarti-1512236779332.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368417438784:android:bcc16fa77a449463",
+        "android_client_info": {
+          "package_name": "com.webinfrasolutions.ikarti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368417438784-g3esvvg36lu8hmmbcssve5j7oqp6k3lu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.webinfrasolutions.ikarti",
+            "certificate_hash": "21b6276d97b1c50d0adb0317ba5e56eabc59809f"
+          }
+        },
+        {
+          "client_id": "368417438784-oofr1fu96mandjgi2v6vplecgip6okgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAzkgP3lNis6Nk0ouRXXS2r9_VYHcNtO0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368417438784-oofr1fu96mandjgi2v6vplecgip6okgj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

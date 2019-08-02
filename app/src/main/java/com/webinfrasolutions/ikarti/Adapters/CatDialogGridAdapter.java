@@ -48,25 +48,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CatDialogGridAdapter extends RecyclerView.Adapter<CatDialogGridAdapter.MyViewHolder> {
 
-Activity context;
+    Activity context;
     List<Category> categories;
 
     public CatDialogGridAdapter(Activity activity, List<Category> records) {
-this.context=activity;
-        this.categories =records;
+        this.context = activity;
+        this.categories = records;
 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-MyTextView textView;
-       ImageView catImg;
+        MyTextView textView;
+        ImageView catImg;
+
         public MyViewHolder(View view) {
             super(view);
-textView=view.findViewById(R.id.cat_title);
-catImg=view.findViewById(R.id.cat_img);
+            textView = view.findViewById(R.id.cat_title);
+            catImg = view.findViewById(R.id.cat_img);
         }
     }
-
 
 
     @Override
@@ -81,28 +81,24 @@ catImg=view.findViewById(R.id.cat_img);
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         holder.setIsRecyclable(false);
 
-holder.textView.setText(categories.get(position).getCatName());
+        holder.textView.setText(categories.get(position).getCatName());
 
-switch (position)
-{
-    case 0:
-        holder.catImg.setImageResource(R.drawable.electronics);
-break;
-    case 1:
-        holder.catImg.setImageResource(R.drawable.fashion);
-break;
-    case 2:
-        holder.catImg.setImageResource(R.drawable.food);
-        break;
-
-
-}
+        switch (position) {
+            case 0:
+                holder.catImg.setImageResource(R.drawable.electronics);
+                break;
+            case 1:
+                holder.catImg.setImageResource(R.drawable.fashion);
+                break;
+            case 2:
+                holder.catImg.setImageResource(R.drawable.food);
+                break;
 
 
+        }
 
 
     }
-
 
 
     @Override

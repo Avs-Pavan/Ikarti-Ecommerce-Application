@@ -20,13 +20,13 @@ import java.util.List;
 
 public class ImagePreviewAdapter extends RecyclerView.Adapter<ImagePreviewAdapter.MyViewHolder> {
 
-    private List <String>urls;
+    private List<String> urls;
     Context context;
-   ImageView  deleteimg;
+    ImageView deleteimg;
 
-    public ImagePreviewAdapter(Context contexts, List<String>url) {
-        this.context=contexts;
-        this.urls=url;
+    public ImagePreviewAdapter(Context contexts, List<String> url) {
+        this.context = contexts;
+        this.urls = url;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -34,12 +34,10 @@ public class ImagePreviewAdapter extends RecyclerView.Adapter<ImagePreviewAdapte
 
         public MyViewHolder(View view) {
             super(view);
-           img = (ImageView) view.findViewById(R.id.preview_img);
+            img = (ImageView) view.findViewById(R.id.preview_img);
             deleteimg = (ImageView) view.findViewById(R.id.deletepic);
             setIsRecyclable(false);
         }
-
-
 
 
     }
@@ -55,19 +53,19 @@ public class ImagePreviewAdapter extends RecyclerView.Adapter<ImagePreviewAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
-deleteimg.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        urls.remove(position);
-        notifyDataSetChanged();
-        Toast.makeText(context,"delete "+position,Toast.LENGTH_SHORT).show();
-    }
-});
+        deleteimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                urls.remove(position);
+                notifyDataSetChanged();
+                Toast.makeText(context, "delete " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
 
-      Glide.with(context)
+        Glide.with(context)
                 .load(concatinate(urls.get(position)))
-              //  .asGif()
-              .into(holder.img);
+                //  .asGif()
+                .into(holder.img);
 
     }
 
@@ -75,10 +73,11 @@ deleteimg.setOnClickListener(new View.OnClickListener() {
     public int getItemCount() {
         return urls.size();
     }
-public  String concatinate(String str){
 
-    str=context.getString(R.string.base_url)+"/deals/images/"+str;
-    return  str;
+    public String concatinate(String str) {
 
-}
+        str = context.getString(R.string.base_url) + "/deals/images/" + str;
+        return str;
+
+    }
 }

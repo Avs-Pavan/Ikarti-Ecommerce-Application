@@ -1,4 +1,5 @@
 package com.webinfrasolutions.ikarti;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -84,7 +85,7 @@ public class DispatchOrder extends AppCompatActivity implements OnMapReadyCallba
     private GoogleMap mMap;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
-    Marker mCurrLocationMarker,destin;
+    Marker mCurrLocationMarker, destin;
     Location mylocation;
     int CALLPERMISSION_REQUEST = 0;
     MyTextView distance, address, sname, oname;
@@ -92,24 +93,24 @@ public class DispatchOrder extends AppCompatActivity implements OnMapReadyCallba
     LatLng source, destination;
     LocationRequest mLocationRequest;
     PendingResult<LocationSettingsResult> pendingResult;
-    public static final int REQUEST_LOCATION=001;
+    public static final int REQUEST_LOCATION = 001;
     LocationRequest locationRequest;
     MyEditText code;
     LocationSettingsRequest.Builder locationSettingsRequest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worker_dispatch_order);
         MyTextView title = findViewById(R.id.toolbar_title);
         title.setText("Dispatch Order");
-code=findViewById(R.id.code_et);
+        code = findViewById(R.id.code_et);
         try {
 
             record = (WorkerOrder) getIntent().getSerializableExtra("record");
 
-            if (record.getDeliveryType().equals("location"))
-            {
-                LinearLayout view=findViewById(R.id.card);
+            if (record.getDeliveryType().equals("location")) {
+                LinearLayout view = findViewById(R.id.card);
                 view.setVisibility(View.VISIBLE);
                 double lat = Double.parseDouble(record.getLocation().get(0).getLatitude());
                 double lon = Double.parseDouble(record.getLocation().get(0).getLongitude());
@@ -119,9 +120,9 @@ code=findViewById(R.id.code_et);
 
                 initLocation();
 
-            }else {
+            } else {
 
-                LinearLayout address_lay=findViewById(R.id.address_lay);
+                LinearLayout address_lay = findViewById(R.id.address_lay);
                 address_lay.setVisibility(View.VISIBLE);
                 initAddress();
             }
@@ -134,19 +135,19 @@ code=findViewById(R.id.code_et);
     }
 
     private void initAddress() {
-        MyTextView fname,lname,addd,city,state,zip,country,phone;
+        MyTextView fname, lname, addd, city, state, zip, country, phone;
 
-        fname =   findViewById(R.id.name3);
-        lname =   findViewById(R.id.name4);
-        addd =   findViewById(R.id.addL2);
-        city =   findViewById(R.id.city2);
-        state =   findViewById(R.id.state2);
-        zip =   findViewById(R.id.zip2);
-        country =   findViewById(R.id.country2);
-        phone =   findViewById(R.id.phn);
+        fname = findViewById(R.id.name3);
+        lname = findViewById(R.id.name4);
+        addd = findViewById(R.id.addL2);
+        city = findViewById(R.id.city2);
+        state = findViewById(R.id.state2);
+        zip = findViewById(R.id.zip2);
+        country = findViewById(R.id.country2);
+        phone = findViewById(R.id.phn);
 
 
-        final Address address=record.getAddress().get(0);
+        final Address address = record.getAddress().get(0);
 
         fname.setText(address.getFirstName());
         lname.setText(address.getLastName());
@@ -158,31 +159,30 @@ code=findViewById(R.id.code_et);
         phone.setText(address.getMobileNumber());
 
     }
+
     public void navigate(View view) {
 
-        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?saddr="+
-                source.latitude+","+source.longitude+"&daddr="+destination.latitude+","+destination.longitude));
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?saddr=" +
+                source.latitude + "," + source.longitude + "&daddr=" + destination.latitude + "," + destination.longitude));
         intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
         startActivity(intent);
     }
 
-    public void initLocation(){
+    public void initLocation() {
 
 
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        boolean GpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if (!GpsStatus) {
+            mEnableGps();
+
+        } else {
+            setmMap();
+        }
 
 
-    LocationManager locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
-
-    boolean GpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-    if (!GpsStatus){
-        mEnableGps();
-
-    }else {
-        setmMap();
     }
-
-
-}
 
     public void mEnableGps() {
         mGoogleApiClient = new GoogleApiClient.Builder(DispatchOrder.this)
@@ -204,6 +204,7 @@ code=findViewById(R.id.code_et);
         mResult();
 
     }
+
     public void mResult() {
         pendingResult = LocationServices.SettingsApi.checkLocationSettings(mGoogleApiClient, locationSettingsRequest.build());
         pendingResult.setResultCallback(new ResultCallback<LocationSettingsResult>() {
@@ -262,28 +263,27 @@ code=findViewById(R.id.code_et);
         }
     }
 
-public  void setmMap(){
+    public void setmMap() {
 
-    if (Build.VERSION.SDK_INT >= 23) {
-        checkAndRequestPermissions();
+        if (Build.VERSION.SDK_INT >= 23) {
+            checkAndRequestPermissions();
+
+        }
+
+
+        if (checkAndRequestPermissions()) {
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+
+            mapFragment.getMapAsync(this);
+        } else checkAndRequestPermissions();
+
 
     }
 
-
-    if (checkAndRequestPermissions())
-    {
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-
-        mapFragment.getMapAsync(this);
-    }else checkAndRequestPermissions();
-
-
-}
-
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        Log.i("status","conneted to  client");
+        Log.i("status", "conneted to  client");
 
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(1000);
@@ -298,20 +298,20 @@ public  void setmMap(){
 
     @Override
     public void onConnectionSuspended(int i) {
-        Toast.makeText(DispatchOrder.this,"Connection Suspended",Toast.LENGTH_SHORT).show();
+        Toast.makeText(DispatchOrder.this, "Connection Suspended", Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(DispatchOrder.this,"onConnectionFailed",Toast.LENGTH_SHORT).show();
+        Toast.makeText(DispatchOrder.this, "onConnectionFailed", Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void onLocationChanged(Location location) {
 
-        Log.i("status","onLocationChanged");
+        Log.i("status", "onLocationChanged");
 
         mLastLocation = location;
         if (mCurrLocationMarker != null) {
@@ -320,8 +320,8 @@ public  void setmMap(){
 
         //Place current location marker
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        mylocation=location;
-        source=latLng;
+        mylocation = location;
+        source = latLng;
         initMap();
         // mSydney = mMap.addMarker(new MarkerOptions()
         //         .position(SYDNEY)
@@ -347,7 +347,7 @@ public  void setmMap(){
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        Log.i("status","map ready");
+        Log.i("status", "map ready");
         //initMap();
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this,
@@ -356,8 +356,7 @@ public  void setmMap(){
                 buildGoogleApiClient();
                 mMap.setMyLocationEnabled(true);
             }
-        }
-        else {
+        } else {
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
@@ -386,7 +385,9 @@ public  void setmMap(){
 
         return true;
     }
-    @Override    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 0:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -425,12 +426,11 @@ public  void setmMap(){
     public void dispatch(View view) {
 
 
-        String cod=code.getText().toString().trim();
-        if (code.length()<4){
+        String cod = code.getText().toString().trim();
+        if (code.length() < 4) {
             code.setError("Enter A Valid Code");
 
-        }
-        else {
+        } else {
             dispatchCall(cod);
         }
     }
@@ -448,25 +448,25 @@ public  void setmMap(){
         WorkerDispatchApi service = new Retrofit.Builder().baseUrl(getString(R.string.base_url)).client(client).addConverterFactory(GsonConverterFactory.create()).build().create(WorkerDispatchApi.class);
 
 
-        retrofit2.Call<MyPojo> mService = service.dispath(Oid,UId,Sid,Code);
-mService.enqueue(new Callback<MyPojo>() {
-    @Override
-    public void onResponse(Call<MyPojo> call, Response<MyPojo> response) {
-        MyTextView message=findViewById(R.id.message);
-        if (response.body().getStatus()){
-            message.setTextColor(getResources().getColor(R.color.light_green));
-            message.setText(response.body().getMessage());
-        }else {
-            message.setTextColor(getResources().getColor(R.color.red));
-            message.setText(response.body().getMessage());
-        }
-    }
+        retrofit2.Call<MyPojo> mService = service.dispath(Oid, UId, Sid, Code);
+        mService.enqueue(new Callback<MyPojo>() {
+            @Override
+            public void onResponse(Call<MyPojo> call, Response<MyPojo> response) {
+                MyTextView message = findViewById(R.id.message);
+                if (response.body().getStatus()) {
+                    message.setTextColor(getResources().getColor(R.color.light_green));
+                    message.setText(response.body().getMessage());
+                } else {
+                    message.setTextColor(getResources().getColor(R.color.red));
+                    message.setText(response.body().getMessage());
+                }
+            }
 
-    @Override
-    public void onFailure(Call<MyPojo> call, Throwable t) {
+            @Override
+            public void onFailure(Call<MyPojo> call, Throwable t) {
 
-    }
-});
+            }
+        });
 
     }
 
@@ -476,9 +476,10 @@ mService.enqueue(new Callback<MyPojo>() {
         public Call<DirectionObject> getJson(@Query("origin") String origin, @Query("destination") String destination
                 , @Query("mode") String mode);
     }
+
     public void initMap() {
 
-        Log.i("status","inimap");
+        Log.i("status", "inimap");
 
         String base_url = "http://maps.googleapis.com/";
 
@@ -505,27 +506,27 @@ mService.enqueue(new Callback<MyPojo>() {
 
         // markerOptions.icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView("Store")));
         // markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
-        destin=  mMap.addMarker(markerOptions);
+        destin = mMap.addMarker(markerOptions);
 
         // mCurrLocationMarker = mMap.addMarker(markerOptions);
 
         // mMap.addMarker(new MarkerOptions().position(destination));
 
-        retrofit2.Call<DirectionObject> mService = service.getJson(source.latitude + "," + source.longitude, destination.latitude + "," + destination.longitude,"driving");
+        retrofit2.Call<DirectionObject> mService = service.getJson(source.latitude + "," + source.longitude, destination.latitude + "," + destination.longitude, "driving");
 
 
         mService.enqueue(new Callback<DirectionObject>() {
             @Override
             public void onResponse(Call<DirectionObject> call, Response<DirectionObject> response) {
 
-                if(response.code()==200){
+                if (response.code() == 200) {
                     List<LatLng> mDirections = getDirectionPolylines(response.body().getRoutes());
                     drawRouteOnMap(mMap, mDirections);
                     String kdistance = response.body().getRoutes().get(0).getLegs().get(0).getDistance().getText();
                     String time = response.body().getRoutes().get(0).getLegs().get(0).getDuration().getText();
                     // Toast.makeText( this, "Distance "+distance+ "Time "+time, Toast.LENGTH_SHORT).show();
-                    distance.setText("Distance "+kdistance+ "  | Journey Time "+time);
-                }else{
+                    distance.setText("Distance " + kdistance + "  | Journey Time " + time);
+                } else {
                     Toast.makeText(DispatchOrder.this, "Server Error", Toast.LENGTH_SHORT).show();
                 }
 
@@ -535,7 +536,7 @@ mService.enqueue(new Callback<MyPojo>() {
             @Override
             public void onFailure(Call<DirectionObject> call, Throwable t) {
                 t.printStackTrace();
-                Toast.makeText(DispatchOrder.this,"Retrofit Failed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(DispatchOrder.this, "Retrofit Failed", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -543,7 +544,7 @@ mService.enqueue(new Callback<MyPojo>() {
 
     }
 
-    private void drawRouteOnMap(GoogleMap map, List<LatLng> positions){
+    private void drawRouteOnMap(GoogleMap map, List<LatLng> positions) {
         PolylineOptions options = new PolylineOptions().width(8).color(getResources().getColor(R.color.light_blue)).geodesic(true);
         options.addAll(positions);
         Polyline polyline = map.addPolyline(options);
@@ -553,9 +554,11 @@ mService.enqueue(new Callback<MyPojo>() {
         LatLngBounds bounds = builder.build();
 
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, 50);
-        mMap.animateCamera(cu, new GoogleMap.CancelableCallback(){
-            public void onCancel(){}
-            public void onFinish(){
+        mMap.animateCamera(cu, new GoogleMap.CancelableCallback() {
+            public void onCancel() {
+            }
+
+            public void onFinish() {
                 CameraUpdate zout = CameraUpdateFactory.zoomBy(-2);
                 mMap.animateCamera(zout);
             }
@@ -569,17 +572,17 @@ mService.enqueue(new Callback<MyPojo>() {
     }
 
 
-    private List<LatLng> getDirectionPolylines(List< RouteObject> routes){
+    private List<LatLng> getDirectionPolylines(List<RouteObject> routes) {
         List<LatLng> directionList = new ArrayList<LatLng>();
-        for( RouteObject route : routes){
-            List< LegsObject> legs = route.getLegs();
-            for( LegsObject leg : legs){
-                List< StepsObject> steps = leg.getSteps();
-                for( StepsObject step : steps){
+        for (RouteObject route : routes) {
+            List<LegsObject> legs = route.getLegs();
+            for (LegsObject leg : legs) {
+                List<StepsObject> steps = leg.getSteps();
+                for (StepsObject step : steps) {
                     PolylineObject polyline = step.getPolyline();
                     String points = polyline.getPoints();
                     List<LatLng> singlePolyline = decodePoly(points);
-                    for (LatLng direction : singlePolyline){
+                    for (LatLng direction : singlePolyline) {
                         directionList.add(direction);
                     }
                 }
@@ -590,33 +593,43 @@ mService.enqueue(new Callback<MyPojo>() {
 
 
     public class DirectionObject {
-        private List< RouteObject> routes;
+        private List<RouteObject> routes;
         private String status;
-        public DirectionObject(List< RouteObject> routes, String status) {
+
+        public DirectionObject(List<RouteObject> routes, String status) {
             this.routes = routes;
             this.status = status;
         }
-        public List< RouteObject> getRoutes() {
+
+        public List<RouteObject> getRoutes() {
             return routes;
         }
+
         public String getStatus() {
             return status;
         }
-    }    public class PolylineObject {
+    }
+
+    public class PolylineObject {
         private String points;
+
         public PolylineObject(String points) {
             this.points = points;
         }
+
         public String getPoints() {
             return points;
         }
     }
+
     public class LegsObject {
-        private List< StepsObject> steps;
-        public LegsObject(List< StepsObject> steps) {
+        private List<StepsObject> steps;
+
+        public LegsObject(List<StepsObject> steps) {
             this.steps = steps;
         }
-        public List< StepsObject> getSteps() {
+
+        public List<StepsObject> getSteps() {
             return steps;
         }
 
@@ -628,57 +641,55 @@ mService.enqueue(new Callback<MyPojo>() {
         private Duration duration;
 
         /**
-         *
-         * @return
-         * The distance
+         * @return The distance
          */
         public Distance getDistance() {
             return distance;
         }
 
         /**
-         *
-         * @param distance
-         * The distance
+         * @param distance The distance
          */
         public void setDistance(Distance distance) {
             this.distance = distance;
         }
 
         /**
-         *
-         * @return
-         * The duration
+         * @return The duration
          */
         public Duration getDuration() {
             return duration;
         }
 
         /**
-         *
-         * @param duration
-         * The duration
+         * @param duration The duration
          */
         public void setDuration(Duration duration) {
             this.duration = duration;
         }
 
     }
+
     public class RouteObject {
-        private List< LegsObject> legs;
-        public RouteObject(List< LegsObject> legs) {
+        private List<LegsObject> legs;
+
+        public RouteObject(List<LegsObject> legs) {
             this.legs = legs;
         }
-        public List< LegsObject> getLegs() {
+
+        public List<LegsObject> getLegs() {
             return legs;
         }
     }
+
     public class StepsObject {
-        private  PolylineObject polyline;
-        public StepsObject( PolylineObject polyline) {
+        private PolylineObject polyline;
+
+        public StepsObject(PolylineObject polyline) {
             this.polyline = polyline;
         }
-        public  PolylineObject getPolyline() {
+
+        public PolylineObject getPolyline() {
             return polyline;
         }
     }
@@ -711,6 +722,7 @@ mService.enqueue(new Callback<MyPojo>() {
         }
         return poly;
     }
+
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -718,7 +730,7 @@ mService.enqueue(new Callback<MyPojo>() {
                 .addApi(LocationServices.API)
                 .build();
         mGoogleApiClient.connect();
-        Log.i("status","building client");
+        Log.i("status", "building client");
 
     }
 

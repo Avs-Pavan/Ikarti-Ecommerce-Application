@@ -60,19 +60,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DashAddsAdapter extends RecyclerView.Adapter<DashAddsAdapter.MyViewHolder> {
 
-Activity context;
-    List<Product>  productList;
+    Activity context;
+    List<Product> productList;
     String uid;
 
-    public DashAddsAdapter(Activity activity,List<Product> records,String uid) {
-this.context=activity;
-        this.productList=records;
-        this.uid=uid;
+    public DashAddsAdapter(Activity activity, List<Product> records, String uid) {
+        this.context = activity;
+        this.productList = records;
+        this.uid = uid;
 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View
-            .OnClickListener{
+            .OnClickListener {
         ImageView image;
         TextView title;
         TextView price;
@@ -83,9 +83,10 @@ this.context=activity;
         RatingBar ratingbar;
         private SmallBang mSmallBang;
         LinearLayout lay;
+
         public MyViewHolder(View view) {
             super(view);
-title=view.findViewById(R.id.title);
+            title = view.findViewById(R.id.title);
             image = (ImageView) itemView.findViewById(R.id.image);
             title = (TextView) itemView.findViewById(R.id.title);
             price = (TextView) itemView.findViewById(R.id.price);
@@ -112,7 +113,7 @@ title=view.findViewById(R.id.title);
         @Override
         public void onClick(View v) {
             Bundle bundle = new Bundle();
-            bundle.putSerializable("record",productList.get(getLayoutPosition()));
+            bundle.putSerializable("record", productList.get(getLayoutPosition()));
             Intent mainIntent = new Intent(context, ProductDetailsActivity.class);
             //add bundle to intent
             mainIntent.putExtras(bundle);
@@ -128,17 +129,19 @@ title=view.findViewById(R.id.title);
 
         return new MyViewHolder(itemView);
     }
+
     public static String priceToRupees(Double price) {
         DecimalFormat formatter = new DecimalFormat("##,##,###.00");
         return formatter.format(price);
     }
+
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         holder.setIsRecyclable(false);
 
-    holder.title.setText(productList.get(position).getProductName());
         holder.title.setText(productList.get(position).getProductName());
-        holder.price.setText(priceToRupees(Double.parseDouble(productList.get(position).getProductPrice()+"")));
+        holder.title.setText(productList.get(position).getProductName());
+        holder.price.setText(priceToRupees(Double.parseDouble(productList.get(position).getProductPrice() + "")));
 /*
         Picasso.with(context)
                 .load("http://192.168.1.2/deals/images/151344360373961.jpg")
@@ -157,12 +160,12 @@ title=view.findViewById(R.id.title);
                 holder.fav2.setVisibility(View.VISIBLE);
                 holder.fav1.setVisibility(View.GONE);
                 like(v);
-                likeProduct(productList.get(position).getProductId(),uid);
+                likeProduct(productList.get(position).getProductId(), uid);
 
-             //   Toast.makeText(context,"like",Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(context,"like",Toast.LENGTH_SHORT).show();
             }
 
-            public void like(View view){
+            public void like(View view) {
                 holder.fav2.setImageResource(R.drawable.f4);
                 holder.mSmallBang.bang(view);
                 holder.mSmallBang.setmListener(new SmallBangListener() {
@@ -185,18 +188,18 @@ title=view.findViewById(R.id.title);
         holder.fav2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-unlikeProduct(productList.get(position).getProductId(),uid);
+                unlikeProduct(productList.get(position).getProductId(), uid);
                 holder.fav2.setVisibility(View.GONE);
                 holder.fav1.setVisibility(View.VISIBLE);
-              //  Toast.makeText(context,"unlike",Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(context,"unlike",Toast.LENGTH_SHORT).show();
 
 
             }
         });
 
-        Pic pic=productList.get(position).getPics().get(0);
+        Pic pic = productList.get(position).getPics().get(0);
         Glide.with(context).
-                load(context.getResources().getString(R.string.base_url)+"deals/images/"+pic.getPicPath())
+                load(context.getResources().getString(R.string.base_url) + "deals/images/" + pic.getPicPath())
                 .thumbnail(Glide.with(context).load(R.drawable.loading))
                 .crossFade()
                 .into(holder.image);
@@ -221,17 +224,17 @@ unlikeProduct(productList.get(position).getProductId(),uid);
         // Change base URL to your upload server URL.
         AddFavouriteApi service = new Retrofit.Builder().baseUrl(context.getString(R.string.base_url)).client(client).addConverterFactory(GsonConverterFactory.create()).build().create(AddFavouriteApi.class);
 
-        retrofit2.Call<MyPojo> mService = service.add(Uid,Id);
+        retrofit2.Call<MyPojo> mService = service.add(Uid, Id);
         mService.enqueue(new Callback<MyPojo>() {
             @Override
             public void onResponse(Call<MyPojo> call, Response<MyPojo> response) {
                 MyPojo obj = response.body();
-               if (obj.getStatus())
-                    // clearFields();
-               {
+                if (obj.getStatus())
+                // clearFields();
+                {
 
-               }    //Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
-                else                     Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
+                }    //Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
+                else Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -256,15 +259,16 @@ unlikeProduct(productList.get(position).getProductId(),uid);
         // Change base URL to your upload server URL.
         DeleteFavouriteApi service = new Retrofit.Builder().baseUrl(context.getString(R.string.base_url)).client(client).addConverterFactory(GsonConverterFactory.create()).build().create(DeleteFavouriteApi.class);
 
-        retrofit2.Call<MyPojo> mService = service.add(Id,Uid);
+        retrofit2.Call<MyPojo> mService = service.add(Id, Uid);
         mService.enqueue(new Callback<MyPojo>() {
             @Override
             public void onResponse(Call<MyPojo> call, Response<MyPojo> response) {
                 MyPojo obj = response.body();
                 if (obj.getStatus())
-                    // clearFields();
-                {}//  Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
-                else    Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
+                // clearFields();
+                {
+                }//  Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
+                else Toast.makeText(context, "" + obj.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
 
